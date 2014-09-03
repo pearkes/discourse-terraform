@@ -6,7 +6,7 @@ resource "digitalocean_droplet" "discourse" {
     name = "discourse"
     image = "ubuntu-14-04-x64"
     region = "nyc2"
-    size = "512mb"
+    size = "${var.size}"
     ssh_keys = ["${var.ssh_key_id}"]
 
     connection {
