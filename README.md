@@ -18,18 +18,6 @@ $ terraform apply \
 
 It's based on the [Discourse easy install guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-digital-ocean.md).
 
-### Preparation Steps
-
-1. Access or create a DigitalOcean Account
-    - [Sign up](https://cloud.digitalocean.com/registrations/new)
-        or [log in](https://cloud.digitalocean.com)
-    - Get a write-enabled [access token](https://cloud.digitalocean.com/settings/tokens/new)
-    - Add [your SSH key](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-keys-with-digitalocean-droplets) and
-        retrieve the ID with `curl -X GET "https://api.digitalocean.com/v2/account/keys" -H "Authorization: Bearer $ACCESS_TOKEN"`
-2. Access or create a Mailgun Account
-    - [Sign up](https://mailgun.com/signup) or [log in](https://mailgun.com/sessions/new)
-    - Get your [API token](https://mailgun.com/cp) (see 'API Key')
-3. Select your domain (`example.com`) and [point the nameservers
-    at DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean#step-two—change-your-domain-server).
-
 ### Running
+
+Follow the [blog post](http://www.hashicorp.com/blog/terraform-discourse.html).
