@@ -35,3 +35,13 @@ variable "ssh_key_path" {}
 variable "size" {
     default = "2gb"
 }
+
+# Prints to stdout after completion
+output "message" {
+  value = "Succesfully set-up Discourse!. Domain: ${digitalocean_domain.discourse.name}"
+}
+
+# Prints to stdout after completion
+output "ip" {
+  value = "Note that DNS propagation can take some time. However, you can visit Discourse via the IP to verify it is running: ${digitalocean_droplet.discourse.ipv4_address}"
+}
