@@ -37,7 +37,7 @@ variable "size" {
 }
 
 # Prints to stdout after completion
-output "message" {
+output "domain" {
   value = "Succesfully set-up Discourse!. Domain: ${digitalocean_domain.discourse.name}"
 }
 
