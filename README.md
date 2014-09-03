@@ -12,10 +12,11 @@ $ terraform apply \
     -var 'domain=YOUR_DOMAIN' \
     -var 'ssh_key_id=YOUR_SSH_KEY_ID' \
     -var 'do_token=YOUR_DO_TOKEN' \
-    -var 'mailgun_token=YOUR_MAILGUN_TOKEN'
+    -var 'mailgun_token=YOUR_MAILGUN_TOKEN' \
+    -var 'ssh_key_path=/path/to/private/key'
 ```
 
-It's based on the [easy install guide]().
+It's based on the [Discourse easy install guide](https://github.com/discourse/discourse/blob/master/docs/INSTALL-digital-ocean.md).
 
 ### Preparation Steps
 
@@ -30,3 +31,5 @@ It's based on the [easy install guide]().
     - Get your [API token](https://mailgun.com/cp) (see 'API Key')
 3. Select your domain (`example.com`) and [point the nameservers
     at DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean#step-two—change-your-domain-server).
+
+### Running

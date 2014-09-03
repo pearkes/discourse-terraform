@@ -52,6 +52,9 @@ resource "digitalocean_droplet" "discourse" {
             "sed -i.bak s/SMTPLOGIN/${mailgun_domain.mail.smtp_password}/g containers/app.yml",
             "sed -i.bak s/SMTPPASSWORD/${var.smtp_password}/g containers/app.yml",
 
+            # SSH Key for docker container (bootstrap will fail if not existing)
+            "ssh-keygen -t rsa -f /root/.ssh/id_rsa -q -N ''",
+
             # Bootstrap and restart
             "./launcher bootstrap app",
             "./launcher start app"

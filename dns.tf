@@ -24,8 +24,9 @@ resource "digitalocean_record" "mail_receiving_0" {
     domain = "${digitalocean_domain.discourse.name}"
     # root
     name = "@"
-    type = "${mailgun_domain.mail.spam_action}"
+    type = "${mailgun_domain.mail.receiving_records.0.record_type}"
     value = "${mailgun_domain.mail.receiving_records.0.value}."
+    priority = 10
 }
 
 resource "digitalocean_record" "mail_receiving_1" {
@@ -34,6 +35,7 @@ resource "digitalocean_record" "mail_receiving_1" {
     name = "@"
     type = "${mailgun_domain.mail.receiving_records.1.record_type}"
     value = "${mailgun_domain.mail.receiving_records.1.value}."
+    priority = 10
 }
 
 resource "digitalocean_record" "mail_sending_0" {
@@ -41,6 +43,7 @@ resource "digitalocean_record" "mail_sending_0" {
     name = "${mailgun_domain.mail.sending_records.0.name}"
     type = "${mailgun_domain.mail.sending_records.0.record_type}"
     value = "${mailgun_domain.mail.sending_records.0.value}."
+    priority = 10
 }
 
 resource "digitalocean_record" "mail_sending_1" {
@@ -48,6 +51,7 @@ resource "digitalocean_record" "mail_sending_1" {
     name = "${mailgun_domain.mail.sending_records.1.name}"
     type = "${mailgun_domain.mail.sending_records.1.record_type}"
     value = "${mailgun_domain.mail.sending_records.1.value}."
+    priority = 10
 }
 
 resource "digitalocean_record" "mail_sending_2" {
@@ -55,5 +59,6 @@ resource "digitalocean_record" "mail_sending_2" {
     name = "${mailgun_domain.mail.sending_records.2.name}"
     type = "${mailgun_domain.mail.sending_records.2.record_type}"
     value = "${mailgun_domain.mail.sending_records.2.value}."
+    priority = 10
 }
 
