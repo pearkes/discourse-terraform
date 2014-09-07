@@ -49,7 +49,7 @@ resource "digitalocean_droplet" "discourse" {
             "sed -i.bak s/WEBHOSTNAME/${var.domain}/g containers/app.yml",
             "sed -i.bak s/SMTPADDRESS/smtp.mailgun.org/g containers/app.yml",
             "sed -i.bak s/SMTPPORT/587/g containers/app.yml",
-            "sed -i.bak s/SMTPLOGIN/${mailgun_domain.mail.smtp_password}/g containers/app.yml",
+            "sed -i.bak s/SMTPLOGIN/${mailgun_domain.mail.smtp_login}/g containers/app.yml",
             "sed -i.bak s/SMTPPASSWORD/${var.smtp_password}/g containers/app.yml",
 
             # SSH Key for docker container (bootstrap will fail if not existing)
